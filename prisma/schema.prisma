@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String   @id @default(uuid())
+  firstName           String
+  lastName            String
+  email               String   @unique
+  password            String
+  avatar              String?  // Profile picture (optional)
+  membershipId        String?  @unique @map("membership_id")
+  membership          Membership? @relation(fields: [membershipId], references: [id])
+  membershipEndDate   DateTime?
+  createdAt           DateTime @default(now())
+  payments            Payment[]
+}
+
+model Trainer {
+  id       String  @id @default(uuid())
+  name     String
+  avatar   String?  // Profile picture (optional)
+  bio      String?
+  gymId    String?  @map("gym_id")
+  gym      Gym? @relation(fields: [gymId], references: [id])
+}
+
+model Gym {
+  id        String  @id @default(uuid())
+  name      String  @unique
+  address   String
+  city      String
+  latitude  Float?  // Map location
+  longitude Float?  // Map location
+  trainers  Trainer[]
+}
+
+model Class {
+  id         String  @id @default(uuid())
+  name       String
+  category   String  // Example: Yoga, HIIT, Strength
+  dayOfWeek  Weekday
+  startTime  DateTime
+}
+
+model Membership {
+  id        String  @id @default(uuid())
+  name      String  @unique
+  image     String? // Membership image (optional)
+  price     Decimal
+  duration  Int     // Duration in months
+  users     User[]
+  payments  Payment[]  // This line establishes the opposite relation
+}
+
+model Payment {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  user         User     @relation(fields: [userId], references: [id])
+  membershipId String   @map("membership_id")
+  membership   Membership @relation(fields: [membershipId], references: [id])
+  amount       Decimal
+  status       PaymentStatus @default(Pending)
+  createdAt    DateTime @default(now())
+}
+
+enum PaymentStatus {
+  Pending
+  Completed
+  Failed
+}
+
+enum Weekday {
+  Monday
+  Tuesday
+  Wednesday
+  Thursday
+  Friday
+  Saturday
+  Sunday
+}
