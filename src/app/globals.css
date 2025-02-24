@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 * {
-  font-family: Roboto;
+  font-family: Outfit, sans-serif;
 }
