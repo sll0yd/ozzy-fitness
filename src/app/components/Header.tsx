@@ -59,8 +59,9 @@ const Header = () => {
         </div>
       </div>
       {/* Quote at the bottom right of the image */}
-      <div className="absolute bottom-4 right-8 text-white/90 text-sm md:text-base lg:text-lg font-light italic leading-tight">
-        Discipline is the powerful art of choosing long-term well-being over short-term comfort.
+      <div className="absolute bottom-4 right-8 text-white/90 text-sm md:text-base lg:text-lg font-light italic leading-tight bg-black/30 backdrop-blur-sm p-4 rounded-lg">
+        Discipline is the powerful art of choosing long-term well-being over
+        short-term comfort.
       </div>
     </div>
   );

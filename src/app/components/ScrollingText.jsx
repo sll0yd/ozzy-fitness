@@ -9,13 +9,12 @@ const ScrollingText = () => {
     <div 
       className="w-full overflow-hidden whitespace-nowrap flex items-center" 
       style={{ 
-        height: '150px', // Increase banner height
+        height: '100px', // Réduit la hauteur de 150px à 100px
         backgroundColor: '#1B1D1F', // Dark background color
       }}
     >
       <motion.div
-        className="inline-block text-4xl font-bold whitespace-nowrap" // Smaller text
-        style={{ color: 'red' }} // Red text color
+        className="inline-block text-4xl font-bold whitespace-nowrap text-white" // Ajout de text-white
         initial={{ x: 0 }} // Start with text already visible
         animate={{
           x: ['0%', '-50%'], // Move from current position to left

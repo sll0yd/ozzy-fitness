@@ -1,125 +1,166 @@
-'use client'
+import { CheckIcon } from "@heroicons/react/20/solid";
+import Image from "next/image";
+import members from "../../assets/members.png";
 
-import React from 'react';
+const tiers = [
+  {
+    name: "STUDENT MEMBERSHIP",
+    id: "tier-student",
+    href: "#",
+    priceWeekly: "$14.95",
+    description: "Perfect for students looking to stay fit on a budget.",
+    features: [
+      "1 month: $59.99",
+      "3 months: $149",
+      "6 months: $299",
+      "12 months: $599",
+    ],
+  },
+  {
+    name: "OFF PEAK MEMBERSHIP",
+    id: "tier-off-peak",
+    href: "#",
+    priceWeekly: "$10.95",
+    description: "Access the gym during off-peak hours (8AM-4PM).",
+    features: [
+      "1 month: $35.99",
+      "3 months: $99",
+      "6 months: $249",
+      "12 months: $499",
+    ],
+  },
+  {
+    name: "24/7 NO LOCK IN",
+    id: "tier-24-7-no-lock-in",
+    href: "#",
+    priceWeekly: "$16.95",
+    description: "24/7 access with no long-term commitment.",
+    features: [
+      "1 month: $59.99",
+      "3 months: $199",
+      "6 months: $399",
+      "12 months: $849",
+    ],
+  },
+  {
+    name: "24/7 ACCESS LOCK IN (12 MONTH)",
+    id: "tier-24-7-lock-in",
+    href: "#",
+    priceWeekly: "$15.95",
+    description: "24/7 access with a 12-month commitment.",
+    features: [
+      "1 month: $59.99",
+      "3 months: $159.99",
+      "6 months: $339.99",
+      "12 months: $719.99",
+    ],
+  },
+  {
+    name: "GROUP FITNESS",
+    id: "tier-group-fitness",
+    href: "#",
+    priceWeekly: "$19.95",
+    description: "Join group fitness classes and stay motivated.",
+    features: [
+      "1 month: $69.99",
+      "3 months: $199",
+      "6 months: $449",
+      "12 months: $899",
+    ],
+  },
+];
 
-const Membership = () => {
-  const memberships = [
-    {
-      title: 'STUDENT',
-      price: '$29.99/month',
-      description: 'Valid student ID required',
-      features: [
-        'Access during off-peak hours only',
-        'Discounted rate for students',
-      ],
-      titleBg: 'bg-red-600', // Red background for STUDENT
-    },
-    {
-      title: 'OFF-PEAK',
-      price: '$39.99/month',
-      description: 'Access during off-peak hours',
-      features: [
-        'Weekdays 10am-4pm & after 8pm',
-        'Weekends full access',
-      ],
-      titleBg: 'bg-gray-700', // Dark grey background for OFF-PEAK
-    },
-    {
-      title: '12-MONTH',
-      price: '$49.99/month',
-      description: '12-month commitment',
-      features: [
-        'Lower monthly rate',
-        'Full gym access anytime',
-      ],
-      titleBg: 'bg-gray-900', // Black background for 12-MONTH
-    },
-    {
-      title: '24 HOUR ACCESS',
-      price: '$59.99/month',
-      description: 'Access the gym 24/7',
-      features: [
-        'Including holidays',
-        'Personal key fob included',
-      ],
-      titleBg: 'bg-red-700', // Darker red background for 24 HOUR ACCESS
-    },
-    {
-      title: 'GROUP FITNESS',
-      price: '$69.99/month',
-      description: 'Full gym access',
-      features: [
-        'Unlimited group classes',
-        'Class reservation priority',
-      ],
-      titleBg: 'bg-gray-800', // Medium grey background for GROUP FITNESS
-    },
-    {
-      title: 'FITNESS PASSPORT',
-      price: '$89.99/month',
-      description: 'Access to all club locations',
-      features: [
-        'Premium amenities',
-        'Guest passes included',
-      ],
-      titleBg: 'bg-red-800', // Deep red background for FITNESS PASSPORT
-    },
-  ];
-
+export default function Membership() {
   return (
-    <div className="bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Membership Plans</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {memberships.map((membership, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-gray-900 to-gray-800 shadow-lg rounded-lg overflow-hidden text-white"
-            >
-              {/* Title Section with Unique Background */}
-              <div className={`${membership.titleBg} p-4 text-center`}>
-                <h3 className="text-2xl font-bold text-white">{membership.title}</h3>
-              </div>
-              <div className="p-6">
-                <p className="text-3xl font-bold text-center text-red-600 mb-4">
-                  {membership.price}
-                </p>
-                <p className="text-sm text-center text-gray-300 mb-6">
-                  {membership.description}
-                </p>
-                <ul className="space-y-3">
-                  {membership.features.map((feature, i) => (
-                    <li key={i} className="flex items-center space-x-2">
-                      <svg
-                        className="w-5 h-5 text-red-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        ></path>
-                      </svg>
-                      <span className="text-gray-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="bg-gray-800 px-6 py-4">
-                <button className="w-full px-4 py-2 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all duration-300">
-                  Select
-                </button>
-              </div>
+    <div className="relative isolate bg-white px-6 py-12 sm:py-16 lg:px-8">
+      <div className="mx-auto max-w-4xl text-center">
+        {/* MEMBERSHIPS PLANS - Bigger */}
+        <h2 className="text-3xl font-semibold text-red-600 sm:text-4xl">
+          MEMBERSHIPS PLANS
+        </h2>
+
+        {/* Choose the right plan for you - Smaller */}
+        <p className="mt-4 text-xl font-medium text-gray-600 sm:text-2xl">
+          Choose the right plan for you
+        </p>
+      </div>
+
+      <p className="mx-auto mt-4 max-w-2xl text-center text-base font-medium text-gray-600 sm:text-lg">
+        Select an affordable plan that fits your fitness goals and lifestyle.
+      </p>
+
+      {/* Membership Plans */}
+      <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        {tiers.map((tier) => (
+          <div
+            key={tier.id}
+            className="flex flex-col justify-between bg-white rounded-lg p-6 ring-1 ring-gray-900/10 sm:p-8"
+          >
+            {/* Title Section with Fixed Height */}
+            <div className="h-24 flex flex-col justify-center">
+              <h3 className="text-lg font-semibold text-red-600 text-center">
+                {tier.name}
+              </h3>
             </div>
-          ))}
+
+            {/* Price Section */}
+            <div className="mt-4 flex items-baseline justify-center gap-x-2">
+              <span className="text-3xl font-semibold tracking-tight text-gray-900">
+                {tier.priceWeekly}
+              </span>
+              <span className="text-sm text-gray-500">/week</span>
+            </div>
+
+            {/* Description Section */}
+            <p className="mt-4 text-sm text-gray-600 text-center">
+              {tier.description}
+            </p>
+
+            {/* Features List */}
+            <ul role="list" className="mt-6 space-y-2 text-sm text-gray-600">
+              {tier.features.map((feature) => (
+                <li key={feature} className="flex gap-x-3">
+                  <CheckIcon className="h-5 w-5 flex-none text-red-600" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            {/* Join Now Button */}
+            <a
+              href={tier.href}
+              className="mt-8 block w-full rounded-md bg-red-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+            >
+              Join Now
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {/* Three-Day Free Trial Card */}
+      <div className="mx-auto mt-12 max-w-6xl">
+        <div className="bg-white rounded-lg p-6 ring-1 ring-gray-900/10 sm:p-8 text-center">
+          <h3 className="text-lg font-semibold text-red-600">
+            3-DAY FREE TRIAL
+          </h3>
+          <p className="mt-2 text-sm text-gray-600">
+            Try our gym for free for 3 days. No commitment required!
+          </p>
+          <a
+            href="#"
+            className="mt-4 inline-block rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+          >
+            Start Your Trial
+          </a>
         </div>
       </div>
-    </div>
-  );
-};
 
-export default Membership;
+    {/* Members Image Section */}
+    <div className="mx-auto mt-16 max-w-6xl">
+        <div className="rounded-lg overflow-hidden">
+          <Image src={members} alt="" className="w-full h-auto" />
+        </div>
+        </div>
+      </div>
+  );
+}

@@ -4,26 +4,23 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GetInTouch from "./components/GetInTouch";
-import Membership from "./components/Membership";
-import MembershipCards from "./components/MembershipCards";
 import FreeTrial from "./components/Freetrial";
-import FitnessWebsite from "./components/FitnessWebsite";
 import ScrollingText from "./components/ScrollingText";
-import SignatureCoursesSection from "./components/SignatureCoursesSection";
-
+import PersonalTraining from "./components/PersonalTraining";
+import ClassicClasses from "./components/ClassicClasses";
+import Locations from "./components/Locations"; 
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Header />
-      <FitnessWebsite />
-      <ScrollingText /> 
-      <SignatureCoursesSection />
-      <Membership />
-      <MembershipCards />
+      <PersonalTraining />
+      <ScrollingText />
+      <ClassicClasses />
       <FreeTrial />
       <GetInTouch />
+      <Locations />
       <Footer />
     </div>
   );

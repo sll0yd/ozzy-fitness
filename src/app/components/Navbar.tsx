@@ -58,10 +58,10 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="/classes"
+                  href="/memberships"
                   className="text-white relative overflow-hidden group font-roboto text-sm lg:text-base uppercase"
                 >
-                  <span>Classes</span>
+                  <span>Memberships</span>
                   <span className="absolute bottom-[-6px] left-0 w-full h-0.5 bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                 </Link>
               </li>
@@ -152,10 +152,10 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/classes"
+                href="/memberships"
                 className="text-white block px-3 py-2 hover:bg-[#1B1D1F] rounded-md font-roboto text-base uppercase"
               >
-                Classes
+                Memberships
               </Link>
             </li>
             <li>
