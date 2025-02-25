@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/90 shadow-lg py-3" : "bg-black py-4"
+        scrolled ? "bg-[#1B1D1F]/90 shadow-lg py-3" : "bg-[#1B1D1F] py-4"
       } overflow-hidden`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,7 +103,7 @@ const Navbar = () => {
               </button>
             </Link>
             <Link href="/free-trial">
-              <button className="px-4 py-1.5 bg-black text-white font-bold rounded-lg border border-white/20 transition-all duration-300 hover:bg-white hover:text-black hover:shadow-xl font-roboto text-sm lg:text-base">
+              <button className="px-4 py-1.5 bg-[#1B1D1F] text-white font-bold rounded-lg border border-white/20 transition-all duration-300 hover:bg-white hover:text-[#1B1D1F] hover:shadow-xl font-roboto text-sm lg:text-base">
                 FREE TRIAL
               </button>
             </Link>
@@ -114,7 +114,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-black focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#1B1D1F] focus:outline-none"
             >
               <svg
                 className="h-6 w-6"
@@ -145,7 +145,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/locations"
-                className="text-white block px-3 py-2 hover:bg-black rounded-md font-roboto text-base uppercase"
+                className="text-white block px-3 py-2 hover:bg-[#1B1D1F] rounded-md font-roboto text-base uppercase"
               >
                 Locations
               </Link>
@@ -153,7 +153,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/classes"
-                className="text-white block px-3 py-2 hover:bg-black rounded-md font-roboto text-base uppercase"
+                className="text-white block px-3 py-2 hover:bg-[#1B1D1F] rounded-md font-roboto text-base uppercase"
               >
                 Classes
               </Link>
@@ -161,7 +161,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/coaching"
-                className="text-white block px-3 py-2 hover:bg-black rounded-md font-roboto text-base uppercase"
+                className="text-white block px-3 py-2 hover:bg-[#1B1D1F] rounded-md font-roboto text-base uppercase"
               >
                 Coaching
               </Link>
@@ -169,7 +169,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/why-ozzy"
-                className="text-white block px-3 py-2 hover:bg-black rounded-md font-roboto text-base uppercase"
+                className="text-white block px-3 py-2 hover:bg-[#1B1D1F] rounded-md font-roboto text-base uppercase"
               >
                 Why Ozzy
               </Link>
@@ -177,7 +177,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/get-in-touch"
-                className="text-white block px-3 py-2 hover:bg-black rounded-md font-roboto text-base uppercase"
+                className="text-white block px-3 py-2 hover:bg-[#1B1D1F] rounded-md font-roboto text-base uppercase"
               >
                 Get in Touch
               </Link>
@@ -190,7 +190,7 @@ const Navbar = () => {
               </button>
             </Link>
             <Link href="/free-trial" className="w-1/2">
-              <button className="w-full py-1.5 bg-black text-white font-bold rounded-lg border border-white/20 transition-all duration-300 hover:bg-white hover:text-black hover:shadow-xl font-roboto text-base">
+              <button className="w-full py-1.5 bg-[#1B1D1F] text-white font-bold rounded-lg border border-white/20 transition-all duration-300 hover:bg-white hover:text-[#1B1D1F] hover:shadow-xl font-roboto text-base">
                 FREE PASS
               </button>
             </Link>
