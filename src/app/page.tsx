@@ -8,7 +8,6 @@ import FreeTrial from "./components/Freetrial";
 import ScrollingText from "./components/ScrollingText";
 import PersonalTraining from "./components/PersonalTraining";
 import ClassicClasses from "./components/ClassicClasses";
-import Locations from "./components/Locations"; 
 
 const Home = () => {
   return (
@@ -20,7 +19,6 @@ const Home = () => {
       <ClassicClasses />
       <FreeTrial />
       <GetInTouch />
-      <Locations />
       <Footer />
     </div>
   );
