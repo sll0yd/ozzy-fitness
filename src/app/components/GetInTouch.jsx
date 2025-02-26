@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 import getintouch from "../../assets/getintouch.png"; // Replace with your image path
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -22,18 +22,18 @@ const GetInTouch = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    alert('Thank you for contacting us! We will get back to you soon.');
+    console.log("Form Data Submitted:", formData);
+    alert("Thank you for contacting us! We will get back to you soon.");
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
     });
   };
 
   return (
-    <div className="flex flex-col md:flex-row w-full bg-gray-50 min-h-screen">
+    <div id="get-in-touch" className="flex flex-col md:flex-row w-full bg-gray-50">
       {/* Left Side (Image) */}
       <div className="w-full md:w-1/2 relative overflow-hidden h-[500px] md:h-auto">
         <Image
@@ -47,7 +47,8 @@ const GetInTouch = () => {
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute bottom-20 right-10 text-white text-right max-w-xs">
           <p className="text-xl md:text-2xl italic">
-            « We're here to help! Get in touch and we'll get back to you as soon as possible. »
+            « We're here to help! Get in touch and we'll get back to you as soon
+            as possible. »
           </p>
         </div>
         <div className="absolute inset-0 flex items-end justify-center">
@@ -56,16 +57,22 @@ const GetInTouch = () => {
       </div>
 
       {/* Right Side (Form) */}
-      <div className="w-full md:w-1/2 p-8 md:p-24 flex flex-col justify-center bg-white shadow-lg rounded-lg">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-gray-900">Get in Touch</h2>
+      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-white shadow-lg rounded-lg">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-gray-900">
+          Get in Touch
+        </h2>
         <p className="text-base md:text-lg mb-8 text-gray-800 leading-relaxed">
-          We’d love to hear from you! Please fill out the form below, and we’ll get back to you shortly.
+          We’d love to hear from you! Please fill out the form below, and we’ll
+          get back to you shortly.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700"
+            >
               Name
             </label>
             <input
@@ -81,7 +88,10 @@ const GetInTouch = () => {
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               Email
             </label>
             <input
@@ -97,7 +107,10 @@ const GetInTouch = () => {
 
           {/* Phone Number */}
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700"
+            >
               Phone Number
             </label>
             <input
@@ -113,7 +126,10 @@ const GetInTouch = () => {
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700"
+            >
               Message
             </label>
             <textarea
