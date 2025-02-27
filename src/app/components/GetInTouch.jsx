@@ -11,32 +11,34 @@ const GetInTouch = () => {
     phone: "",
     message: "",
   });
-  
+
   // Add refs for both the component and the form title
   const componentRef = useRef(null);
   const formTitleRef = useRef(null);
-  
+
   // Effect to handle scrolling based on device type
   useEffect(() => {
-    if (window.location.hash === '#get-in-touch') {
+    if (window.location.hash === "#get-in-touch") {
       // Slightly longer delay to ensure component is fully rendered
       setTimeout(() => {
         // Check if it's mobile view (using window width as a simple way to detect)
         const isMobile = window.innerWidth < 768; // 768px is the md breakpoint in Tailwind
-        
+
         if (isMobile && formTitleRef.current) {
           // Mobile: scroll to the form title with offset for the navbar
           const navbarHeight = 70; // Approximate height of the navbar in mobile view
-          const titlePosition = formTitleRef.current.getBoundingClientRect().top;
-          const offsetPosition = titlePosition + window.pageYOffset - navbarHeight;
-          
+          const titlePosition =
+            formTitleRef.current.getBoundingClientRect().top;
+          const offsetPosition =
+            titlePosition + window.pageYOffset - navbarHeight;
+
           window.scrollTo({
             top: offsetPosition,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         } else if (componentRef.current) {
           // Desktop: scroll to the beginning of the component
-          componentRef.current.scrollIntoView({ behavior: 'smooth' });
+          componentRef.current.scrollIntoView({ behavior: "smooth" });
         }
       }, 300); // Increased delay to ensure everything is loaded
     }
@@ -63,8 +65,8 @@ const GetInTouch = () => {
   };
 
   return (
-    <div 
-      id="get-in-touch" 
+    <div
+      id="get-in-touch"
       ref={componentRef}
       className="flex flex-col md:flex-row w-full bg-gray-50 scroll-mt-24"
     >
@@ -87,16 +89,17 @@ const GetInTouch = () => {
       </div>
 
       {/* Right Side (Form) */}
-      <div 
-        className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center items-center bg-white shadow-lg rounded-lg"
-      >
+      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center items-center bg-white shadow-lg rounded-lg">
         <div className="max-w-md w-full">
-          <h2 ref={formTitleRef} className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-gray-900">
+          <h2
+            ref={formTitleRef}
+            className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-gray-900"
+          >
             GET IN TOUCH
           </h2>
           <p className="text-sm md:text-base mb-6 text-gray-800 leading-relaxed">
-            We'd love to hear from you! Please fill out the form below, and we'll
-            get back to you shortly.
+            We'd love to hear from you! Please fill out the form below, and
+            we'll get back to you shortly.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">

@@ -58,12 +58,12 @@ const Navbar = () => {
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
@@ -81,7 +81,7 @@ const Navbar = () => {
   // Modified scrollToSection with background fix
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
-    
+
     // Special handling for get-in-touch
     if (sectionId === "get-in-touch") {
       setActiveLink("/#get-in-touch");
@@ -100,10 +100,10 @@ const Navbar = () => {
     } else {
       // If not found, navigate to it
       window.location.href = `/#${sectionId}`;
-      
+
       // Force background to be visible
       setScrolled(true);
-      
+
       // Close menu after navigation
       setTimeout(() => {
         setIsMobileMenuOpen(false);
@@ -116,15 +116,18 @@ const Navbar = () => {
     { name: "Memberships", path: "/memberships" },
     { name: "Why Ozzy", path: "/whyozzy" },
     { name: "Careers", path: "/careers" },
-    { name: "Get in Touch", path: "/#get-in-touch", isScroll: true, sectionId: "get-in-touch" },
+    {
+      name: "Get in Touch",
+      path: "/#get-in-touch",
+      isScroll: true,
+      sectionId: "get-in-touch",
+    },
   ];
 
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? "bg-[#1B1D1F] shadow-lg py-3" 
-          : "bg-[#1B1D1F] py-4"
+        scrolled ? "bg-[#1B1D1F] shadow-lg py-3" : "bg-[#1B1D1F] py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,16 +154,21 @@ const Navbar = () => {
                 <li key={link.path}>
                   <Link
                     href={link.path}
-                    onClick={link.isScroll ? (e) => scrollToSection(e, link.sectionId) : undefined}
+                    onClick={
+                      link.isScroll
+                        ? (e) => scrollToSection(e, link.sectionId)
+                        : undefined
+                    }
                     className={`text-white relative inline-block group font-roboto text-sm lg:text-base uppercase tracking-wide transition-colors duration-300 hover:text-red-200 ${
                       link.isScroll ? "cursor-pointer" : ""
                     }`}
                   >
                     <span className="relative inline-block">
                       {link.name}
-                      <span 
+                      <span
                         className={`absolute bottom-[-6px] left-0 right-0 h-0.5 bg-red-600 transform origin-center transition-transform duration-300 ${
-                          (link.path === "/#get-in-touch" && activeLink === "/#get-in-touch") ||
+                          (link.path === "/#get-in-touch" &&
+                            activeLink === "/#get-in-touch") ||
                           (!link.isScroll && activeLink === link.path)
                             ? "scale-x-0"
                             : "group-hover:scale-x-100 scale-x-0"
@@ -227,7 +235,7 @@ const Navbar = () => {
       {/* Mobile menu - with improved animation */}
       {isMobileMenuOpen && (
         <div className="md:hidden fixed inset-0 z-50">
-          <div 
+          <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           ></div>
@@ -237,8 +245,18 @@ const Navbar = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-white hover:text-red-400 transition-colors duration-200"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
@@ -272,7 +290,7 @@ const Navbar = () => {
               </ul>
               <div className="flex flex-col space-y-3 mt-8 pb-2">
                 <Link href="/memberships" className="w-full">
-                  <button 
+                  <button
                     className="w-full py-2 bg-red-600 text-white font-bold rounded-lg shadow-lg transition-all duration-300 hover:bg-red-700 active:scale-95 font-roboto text-base"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -280,7 +298,7 @@ const Navbar = () => {
                   </button>
                 </Link>
                 <Link href="/memberships" className="w-full">
-                  <button 
+                  <button
                     className="w-full py-2 bg-transparent text-white font-bold rounded-lg border border-white/30 transition-all duration-300 hover:bg-white/10 active:scale-95 font-roboto text-base"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

@@ -1,39 +1,68 @@
 import React from "react";
 import Image from "next/image";
+import DOMPurify from 'dompurify';
 import members1 from "../../assets/members1.png";
-import { ArrowRightIcon, ClockIcon, UserGroupIcon, AcademicCapIcon, SparklesIcon, HeartIcon, ScaleIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowRightIcon,
+  ClockIcon,
+  UserGroupIcon,
+  AcademicCapIcon,
+  SparklesIcon,
+  HeartIcon,
+  ScaleIcon,
+} from "@heroicons/react/24/outline";
+
+// Utility function for sanitizing text
+function sanitizeText(text: string): string {
+  return DOMPurify.sanitize(text, {
+    ALLOWED_TAGS: [],  // Strip all HTML tags
+    ALLOWED_ATTR: []   // Strip all HTML attributes
+  });
+}
 
 export default function WhyOzzy() {
   // Main features section
   const mainFeatures = [
     {
-      title: "24/7 ACCESS",
-      description: "Our facilities are always open, allowing you to train whenever fits your schedule. Early bird or night owl, we're here for you around the clock.",
+      title: sanitizeText("24/7 ACCESS"),
+      description: sanitizeText(
+        "Our facilities are always open, allowing you to train whenever fits your schedule. Early bird or night owl, we're here for you around the clock."
+      ),
       icon: ClockIcon,
     },
     {
-      title: "VARIETY OF CLASSES",
-      description: "From high-intensity interval training to mind-body wellness sessions, our diverse class schedule ensures there's something for everyone, regardless of your fitness level or preference.",
+      title: sanitizeText("VARIETY OF CLASSES"),
+      description: sanitizeText(
+        "From high-intensity interval training to mind-body wellness sessions, our diverse class schedule ensures there's something for everyone, regardless of your fitness level or preference."
+      ),
       icon: UserGroupIcon,
     },
     {
-      title: "EXPERT TRAINERS",
-      description: "Our certified personal trainers are passionate about helping you reach your goals. With personalized guidance and motivation, you'll never feel lost on your fitness journey.",
+      title: sanitizeText("EXPERT TRAINERS"),
+      description: sanitizeText(
+        "Our certified personal trainers are passionate about helping you reach your goals. With personalized guidance and motivation, you'll never feel lost on your fitness journey."
+      ),
       icon: AcademicCapIcon,
     },
     {
-      title: "STATE-OF-THE-ART EQUIPMENT",
-      description: "Train with the latest fitness technology and equipment designed to maximize your workout efficiency and results, all maintained to the highest standards.",
+      title: sanitizeText("STATE-OF-THE-ART EQUIPMENT"),
+      description: sanitizeText(
+        "Train with the latest fitness technology and equipment designed to maximize your workout efficiency and results, all maintained to the highest standards."
+      ),
       icon: SparklesIcon,
     },
     {
-      title: "SUPPORTIVE COMMUNITY",
-      description: "Join a welcoming community of like-minded individuals who will encourage and inspire you to push beyond your limits and celebrate your achievements.",
+      title: sanitizeText("SUPPORTIVE COMMUNITY"),
+      description: sanitizeText(
+        "Join a welcoming community of like-minded individuals who will encourage and inspire you to push beyond your limits and celebrate your achievements."
+      ),
       icon: HeartIcon,
     },
     {
-      title: "NUTRITION GUIDANCE",
-      description: "Access expert nutrition advice to complement your training regimen. Because we know that great results come from both exercise and proper nutrition.",
+      title: sanitizeText("NUTRITION GUIDANCE"),
+      description: sanitizeText(
+        "Access expert nutrition advice to complement your training regimen. Because we know that great results come from both exercise and proper nutrition."
+      ),
       icon: ScaleIcon,
     },
   ];
@@ -41,42 +70,78 @@ export default function WhyOzzy() {
   // Promotional offers
   const promoOffers = [
     {
-      title: "3 DAY FREE TRIAL",
-      description: "Experience everything Ozzy Fitness has to offer with no commitment. Available with all memberships.",
-      buttonText: "CLAIM NOW",
+      title: sanitizeText("3 DAY FREE TRIAL"),
+      description: sanitizeText(
+        "Experience everything Ozzy Fitness has to offer with no commitment. Available with all memberships."
+      ),
+      buttonText: sanitizeText("CLAIM NOW"),
       href: "#",
     },
     {
-      title: "FREE PERSONAL TRAINING SESSION",
-      description: "Get a complimentary 1-hour session with one of our expert trainers to kickstart your journey.",
-      buttonText: "BOOK SESSION",
+      title: sanitizeText("FREE PERSONAL TRAINING SESSION"),
+      description: sanitizeText(
+        "Get a complimentary 1-hour session with one of our expert trainers to kickstart your journey."
+      ),
+      buttonText: sanitizeText("BOOK SESSION"),
       href: "#",
     },
     {
-      title: "NO LOCK-IN CONTRACTS",
-      description: "Flexible membership options that adapt to your lifestyle, with no long-term commitments required.",
-      buttonText: "VIEW PLANS",
+      title: sanitizeText("NO LOCK-IN CONTRACTS"),
+      description: sanitizeText(
+        "Flexible membership options that adapt to your lifestyle, with no long-term commitments required."
+      ),
+      buttonText: sanitizeText("VIEW PLANS"),
       href: "#",
+    },
+  ];
+
+  // Testimonials with sanitization
+  const testimonials = [
+    {
+      quote: sanitizeText(
+        "Since joining Ozzy Fitness, I've lost 30kg and gained confidence I never thought possible. The trainers are incredible and the 24/7 access fits perfectly with my busy schedule."
+      ),
+      name: sanitizeText("Sarah M."),
+      duration: sanitizeText("Member for 1.5 years"),
+    },
+    {
+      quote: sanitizeText(
+        "The variety of classes keeps my workouts fresh and exciting. I've met amazing people and the community aspect of Ozzy Fitness has made all the difference in my consistency."
+      ),
+      name: sanitizeText("Michael T."),
+      duration: sanitizeText("Member for 2 years"),
+    },
+    {
+      quote: sanitizeText(
+        "As a busy professional, the 24/7 access is essential. The equipment is top-notch and always well-maintained. The nutrition guidance has completely changed my relationship with food."
+      ),
+      name: sanitizeText("James R."),
+      duration: sanitizeText("Member for 8 months"),
     },
   ];
 
   return (
     <div className="relative isolate bg-white px-6 py-12 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-5xl text-center">
-        <h2 className="text-base font-semibold tracking-wider text-red-600 uppercase">Your Fitness Journey</h2>
+        <h2 className="text-base font-semibold tracking-wider text-red-600 uppercase">
+          Your Fitness Journey
+        </h2>
         <h1 className="mt-2 text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl">
           WHY CHOOSE OZZY FITNESS
         </h1>
         <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-          Ozzy Fitness is dedicated to helping you transform your life through fitness. We provide a comprehensive approach to wellness with flexible membership options, diverse classes, and expert guidance tailored to your individual needs.
+          Ozzy Fitness is dedicated to helping you transform your life through
+          fitness. We provide a comprehensive approach to wellness with flexible
+          membership options, diverse classes, and expert guidance tailored to
+          your individual needs.
         </p>
       </div>
 
       {/* Main Features Grid */}
       <div className="mx-auto mt-12 max-w-7xl grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-20">
         {mainFeatures.map((feature, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
             <div className="p-8">
@@ -96,8 +161,8 @@ export default function WhyOzzy() {
 
       {/* Video or Image Banner */}
       <div className="mx-auto max-w-7xl relative rounded-2xl overflow-hidden shadow-xl mb-20 aspect-video">
-        <Image 
-          src={members1} // Replace with your uploaded image
+        <Image
+          src={members1}
           alt="Ozzy Fitness Training Environment"
           width={1200}
           height={600}
@@ -108,37 +173,33 @@ export default function WhyOzzy() {
       {/* Member Testimonials */}
       <div className="mx-auto max-w-7xl mb-20">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">WHAT OUR MEMBERS SAY</h2>
-          <p className="mt-4 text-lg text-gray-600">Real stories from real members who transformed their lives with us</p>
+          <h2 className="text-3xl font-bold text-gray-900">
+            WHAT OUR MEMBERS SAY
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            Real stories from real members who transformed their lives with us
+          </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Testimonial 1 */}
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <div className="text-center">
-              <p className="text-gray-600 italic mb-4">"Since joining Ozzy Fitness, I've lost 30kg and gained confidence I never thought possible. The trainers are incredible and the 24/7 access fits perfectly with my busy schedule."</p>
-              <p className="font-semibold text-gray-900">Sarah M.</p>
-              <p className="text-sm text-gray-500">Member for 1.5 years</p>
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-xl shadow-md p-6"
+            >
+              <div className="text-center">
+                <p className="text-gray-600 italic mb-4">
+                  {testimonial.quote}
+                </p>
+                <p className="font-semibold text-gray-900">
+                  {testimonial.name}
+                </p>
+                <p className="text-sm text-gray-500">
+                  {testimonial.duration}
+                </p>
+              </div>
             </div>
-          </div>
-          
-          {/* Testimonial 2 */}
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <div className="text-center">
-              <p className="text-gray-600 italic mb-4">"The variety of classes keeps my workouts fresh and exciting. I've met amazing people and the community aspect of Ozzy Fitness has made all the difference in my consistency."</p>
-              <p className="font-semibold text-gray-900">Michael T.</p>
-              <p className="text-sm text-gray-500">Member for 2 years</p>
-            </div>
-          </div>
-          
-          {/* Testimonial 3 */}
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <div className="text-center">
-              <p className="text-gray-600 italic mb-4">"As a busy professional, the 24/7 access is essential. The equipment is top-notch and always well-maintained. The nutrition guidance has completely changed my relationship with food."</p>
-              <p className="font-semibold text-gray-900">James R.</p>
-              <p className="text-sm text-gray-500">Member for 8 months</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
@@ -146,24 +207,33 @@ export default function WhyOzzy() {
       <div className="mx-auto max-w-7xl mb-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">SPECIAL OFFERS</h2>
-          <p className="mt-4 text-lg text-gray-600">Start your fitness journey today with these exclusive offers</p>
+          <p className="mt-4 text-lg text-gray-600">
+            Start your fitness journey today with these exclusive offers
+          </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {promoOffers.map((offer, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="rounded-xl overflow-hidden shadow-lg group bg-white flex flex-col items-center text-center p-6 h-full"
             >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{offer.title}</h3>
-              <p className="text-gray-600 mb-6 flex-grow">{offer.description}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                {offer.title}
+              </h3>
+              <p className="text-gray-600 mb-6 flex-grow">
+                {offer.description}
+              </p>
               <div className="mt-auto">
-                <a 
+                <a
                   href={offer.href}
                   className="inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700 transition-opacity shadow-sm"
                 >
                   {offer.buttonText}
-                  <ArrowRightIcon className="ml-2 -mr-1 h-4 w-4" aria-hidden="true" />
+                  <ArrowRightIcon
+                    className="ml-2 -mr-1 h-4 w-4"
+                    aria-hidden="true"
+                  />
                 </a>
               </div>
             </div>
@@ -177,10 +247,13 @@ export default function WhyOzzy() {
           <div>
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               <span className="block">Ready to start your journey?</span>
-              <span className="block text-red-200">Join Ozzy Fitness today.</span>
+              <span className="block text-red-200">
+                Join Ozzy Fitness today.
+              </span>
             </h2>
             <p className="mt-4 text-lg leading-6 text-white opacity-90">
-              Sign up now and get access to exclusive member benefits, including our 3-day free trial.
+              Sign up now and get access to exclusive member benefits, including
+              our 3-day free trial.
             </p>
           </div>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">

@@ -75,12 +75,16 @@ export default function Membership() {
     <div className="relative isolate bg-white px-6 py-12 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-5xl text-center">
         {/* Styled like WhyOzzy's header section */}
-        <h2 className="text-base font-semibold tracking-wider text-red-600 uppercase">Fitness Plans</h2>
+        <h2 className="text-base font-semibold tracking-wider text-red-600 uppercase">
+          Fitness Plans
+        </h2>
         <h1 className="mt-2 text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl">
           MEMBERSHIPS PLANS
         </h1>
         <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-          Select an affordable plan that fits your fitness goals and lifestyle. We offer flexible options for everyone, from students to fitness enthusiasts.
+          Select an affordable plan that fits your fitness goals and lifestyle.
+          We offer flexible options for everyone, from students to fitness
+          enthusiasts.
         </p>
       </div>
 

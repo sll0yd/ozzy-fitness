@@ -1,26 +1,45 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import DOMPurify from 'dompurify';
 import classes from "../../assets/classes.jpg";
 
+// Utility function for sanitizing text
+function sanitizeText(text: string): string {
+  return DOMPurify.sanitize(text, {
+    ALLOWED_TAGS: [],  // Strip all HTML tags
+    ALLOWED_ATTR: []   // Strip all attributes
+  });
+}
+
 // Classic Courses Section Component
-const ClassicClasses = () => {
-  const [hovered, setHovered] = useState(false);
+const ClassicClasses: React.FC = () => {
+  const [hovered, setHovered] = useState<boolean>(false);
+
+  // Sanitized content
+  const content = {
+    quote: sanitizeText("« It doesn't get easier. You get stronger with every session. »"),
+    title: sanitizeText("GROUP CLASSES"),
+    description: sanitizeText(
+      "Experience the energy of training together! Designed to enhance your fitness journey, our group classes create a powerful synergy between energy expenditure, active recovery, and improved mobility—all within a motivating and supportive community."
+    ),
+    buttonText: sanitizeText("SEE MORE")
+  };
 
   return (
     <div className="flex flex-col md:flex-row w-full bg-stone-50">
       {/* Image on the left */}
       <div className="w-full md:w-1/2 min-h-[700px] relative overflow-hidden order-1 md:order-1">
         <Image
-          src={classes} // Replace with your image path
+          src={classes}
           alt="Group Classes"
-          layout="fill" // Fill the container
-          objectFit="cover" // Cover the container while maintaining aspect ratio
+          layout="fill"
+          objectFit="cover"
           className="w-full h-full"
         />
         {/* Text overlay on the image */}
         <div className="absolute bottom-20 right-10 text-white text-right max-w-xs">
           <p className="text-xl md:text-2xl italic">
-            « It doesn't get easier. You get stronger with every session. »
+            {content.quote}
           </p>
         </div>
       </div>
@@ -28,13 +47,10 @@ const ClassicClasses = () => {
       {/* Text content on the right */}
       <div className="w-full md:w-1/2 p-8 md:p-24 flex flex-col justify-center order-2 md:order-2">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-          GROUP CLASSES
+          {content.title}
         </h2>
         <p className="text-base md:text-lg mb-12 text-gray-800 leading-relaxed">
-          Experience the energy of training together! Designed to enhance your
-          fitness journey, our group classes create a powerful synergy between
-          energy expenditure, active recovery, and improved mobility—all within
-          a motivating and supportive community.
+          {content.description}
         </p>
 
         {/* Single Button */}
@@ -45,7 +61,7 @@ const ClassicClasses = () => {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          SEE MORE
+          {content.buttonText}
         </button>
       </div>
     </div>

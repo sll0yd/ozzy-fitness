@@ -1,8 +1,15 @@
-'use client'
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaInstagram, FaTiktok, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import React from "react";
+import Link from "next/link";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTiktok,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -13,7 +20,9 @@ const Footer = () => {
           <div className="mb-8 md:mb-0">
             <h3 className="text-xl font-bold mb-4">About Us</h3>
             <p className="text-sm text-gray-400">
-              We are dedicated to providing the best fitness experience for our members. Join us today and start your journey to a healthier lifestyle.
+              We are dedicated to providing the best fitness experience for our
+              members. Join us today and start your journey to a healthier
+              lifestyle.
             </p>
           </div>
 
@@ -22,22 +31,34 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition duration-300">
+                <Link
+                  href="/privacy-policy"
+                  className="text-sm text-gray-400 hover:text-white transition duration-300"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms-and-conditions" className="text-sm text-gray-400 hover:text-white transition duration-300">
+                <Link
+                  href="/terms-and-conditions"
+                  className="text-sm text-gray-400 hover:text-white transition duration-300"
+                >
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-sm text-gray-400 hover:text-white transition duration-300">
+                <Link
+                  href="/faq"
+                  className="text-sm text-gray-400 hover:text-white transition duration-300"
+                >
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-sm text-gray-400 hover:text-white transition duration-300">
+                <Link
+                  href="/careers"
+                  className="text-sm text-gray-400 hover:text-white transition duration-300"
+                >
                   Careers
                 </Link>
               </li>
@@ -50,7 +71,9 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2">
                 <FaMapMarkerAlt className="text-gray-400" />
-                <span className="text-sm text-gray-400">Head Office: U19/5B Curtis Road, McGraths Hill NSW 2756</span>
+                <span className="text-sm text-gray-400">
+                  Head Office: U19/5B Curtis Road, McGraths Hill NSW 2756
+                </span>
               </li>
               <li className="flex items-center space-x-2">
                 <FaPhone className="text-gray-400" />

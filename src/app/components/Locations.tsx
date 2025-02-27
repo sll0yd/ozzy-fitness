@@ -35,12 +35,16 @@ export default function GymLocations() {
   return (
     <div className="relative isolate bg-white px-6 py-12 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-5xl text-center">
-        <h2 className="text-base font-semibold tracking-wider text-red-600 uppercase">Find Us</h2>
+        <h2 className="text-base font-semibold tracking-wider text-red-600 uppercase">
+          Find Us
+        </h2>
         <h1 className="mt-2 text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl">
           OUR GYM LOCATIONS
         </h1>
         <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-          Find an Ozzy Fitness gym near you and start your fitness journey today. Our facilities are strategically located to serve communities across Australia.
+          Find an Ozzy Fitness gym near you and start your fitness journey
+          today. Our facilities are strategically located to serve communities
+          across Australia.
         </p>
       </div>
 
@@ -52,7 +56,9 @@ export default function GymLocations() {
             className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden"
           >
             {/* Gym Photo - Responsive height */}
-            <div className="relative w-full pt-[75%] sm:pt-[100%]"> {/* Aspect ratio container */}
+            <div className="relative w-full pt-[75%] sm:pt-[100%]">
+              {" "}
+              {/* Aspect ratio container */}
               <Image
                 src={location.image}
                 alt={location.name}
@@ -93,7 +99,9 @@ export default function GymLocations() {
 
       {/* Full-Width Club Photo - Responsive */}
       <div className="mx-auto mt-16 max-w-7xl">
-        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden"> {/* 16:9 aspect ratio */}
+        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden">
+          {" "}
+          {/* 16:9 aspect ratio */}
           <Image
             src={location3}
             alt="Our Club"

@@ -37,9 +37,9 @@ const Header = () => {
             priority
             className="object-cover object-center sm:object-center md:object-[center_40%]"
             style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
             }}
           />
         </div>
@@ -110,19 +110,25 @@ const Header = () => {
         </div>
       </motion.div>
 
-      {/* Quote with enhanced styling - slightly bigger than previous mobile version */}
+      {/* Quote with enhanced styling - slightly higher positioning for mobile */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-3 sm:bottom-12 right-3 sm:right-8 max-w-[180px] sm:max-w-xs md:max-w-sm text-white z-20"
+        className="absolute bottom-6 sm:bottom-10 right-3 sm:right-8 max-w-[180px] sm:max-w-xs md:max-w-sm text-white z-20"
       >
         <div className="relative">
           <p className="text-white/90 text-[10px] sm:text-sm md:text-base font-light leading-tight bg-black/70 backdrop-blur-md p-2 sm:p-4 pt-2 sm:pt-6 rounded-lg border border-white/10">
             Discipline is the powerful art of choosing long-term well-being over
             short-term comfort.
             <span className="block mt-1 sm:mt-2 text-[9px] sm:text-xs text-right font-bold tracking-widest">
-              <span className="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">#WHATEVER</span><span className="text-white/70">IT</span><span className="bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">TAKES</span>
+              <span className="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
+                #WHATEVER
+              </span>
+              <span className="text-white/70">IT</span>
+              <span className="bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">
+                TAKES
+              </span>
             </span>
           </p>
         </div>

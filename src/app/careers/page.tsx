@@ -9,11 +9,9 @@ const Memberships = () => {
     <div>
       <Navbar />
       <main className="pt-16">
-
-      <Careers />
-      <Footer />
+        <Careers />
+        <Footer />
       </main>
-
     </div>
   );
 };
