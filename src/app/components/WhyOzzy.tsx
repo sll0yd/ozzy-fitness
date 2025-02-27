@@ -16,17 +16,17 @@ export default function WhyOzzy() {
   const mainFeatures = [
     {
       title: "24/7 ACCESS",
-      description: "Our facilities are always open, allowing you to train whenever fits your schedule. Early bird or night owl, we're here for you around the clock.",
+      description: "Our facilities are always open, allowing you to train whenever fits your schedule. Early bird or night owl, we&apos;re here for you around the clock.",
       icon: ClockIcon,
     },
     {
       title: "VARIETY OF CLASSES",
-      description: "From high-intensity interval training to mind-body wellness sessions, our diverse class schedule ensures there's something for everyone, regardless of your fitness level or preference.",
+      description: "From high-intensity interval training to mind-body wellness sessions, our diverse class schedule ensures there&apos;s something for everyone, regardless of your fitness level or preference.",
       icon: UserGroupIcon,
     },
     {
       title: "EXPERT TRAINERS",
-      description: "Our certified personal trainers are passionate about helping you reach your goals. With personalized guidance and motivation, you'll never feel lost on your fitness journey.",
+      description: "Our certified personal trainers are passionate about helping you reach your goals. With personalized guidance and motivation, you&apos;ll never feel lost on your fitness journey.",
       icon: AcademicCapIcon,
     },
     {
@@ -71,12 +71,12 @@ export default function WhyOzzy() {
   // Testimonials
   const testimonials = [
     {
-      quote: "Since joining Ozzy Fitness, I've lost 30kg and gained confidence I never thought possible. The trainers are incredible and the 24/7 access fits perfectly with my busy schedule.",
+      quote: "Since joining Ozzy Fitness, I&apos;ve lost 30kg and gained confidence I never thought possible. The trainers are incredible and the 24/7 access fits perfectly with my busy schedule.",
       name: "Sarah M.",
       duration: "Member for 1.5 years",
     },
     {
-      quote: "The variety of classes keeps my workouts fresh and exciting. I've met amazing people and the community aspect of Ozzy Fitness has made all the difference in my consistency.",
+      quote: "The variety of classes keeps my workouts fresh and exciting. I&apos;ve met amazing people and the community aspect of Ozzy Fitness has made all the difference in my consistency.",
       name: "Michael T.",
       duration: "Member for 2 years",
     },
@@ -108,7 +108,7 @@ export default function WhyOzzy() {
       <div className="mx-auto mt-12 max-w-7xl grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-20">
         {mainFeatures.map((feature, index) => (
           <div
-            key={index}
+            key={`feature-${feature.title}-${index}`}
             className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
             <div className="p-8">
@@ -151,7 +151,7 @@ export default function WhyOzzy() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div 
-              key={index} 
+              key={`testimonial-${testimonial.name}-${index}`} 
               className="bg-white rounded-xl shadow-md p-6"
             >
               <div className="text-center">
@@ -182,7 +182,7 @@ export default function WhyOzzy() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {promoOffers.map((offer, index) => (
             <div
-              key={index}
+              key={`offer-${offer.title}-${index}`}
               className="rounded-xl overflow-hidden shadow-lg group bg-white flex flex-col items-center text-center p-6 h-full"
             >
               <h3 className="text-xl font-bold text-gray-900 mb-4">

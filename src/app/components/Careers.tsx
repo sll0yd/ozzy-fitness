@@ -110,7 +110,7 @@ export default function Careers() {
           GROW WITH OZZY
         </h1>
         <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-          Join our amazing, friendly team at Ozzy Fitness and take the next step in your fitness career. We're passionate about helping you grow and succeed in a supportive and inspiring environment.
+          Join our amazing, friendly team at Ozzy Fitness and take the next step in your fitness career. We&apos;re passionate about helping you grow and succeed in a supportive and inspiring environment.
         </p>
       </div>
 
@@ -293,7 +293,7 @@ export default function Careers() {
       {/* Expression of Interest */}
       <div className="mx-auto mt-20 max-w-7xl text-center">
         <p className="text-lg text-gray-600">
-          Don't see any openings that interest you? Send your resume to{" "}
+          Don&apos;t see any openings that interest you? Send your resume to{" "}
           <a
             href="mailto:admin@ozzyfitness.com.au"
             className="text-red-600 hover:underline"
@@ -301,7 +301,7 @@ export default function Careers() {
             admin@ozzyfitness.com.au
           </a>
           {", "}
-          we'd love to hear from you!
+          we&apos;d love to hear from you!
         </p>
       </div>
     </div>
