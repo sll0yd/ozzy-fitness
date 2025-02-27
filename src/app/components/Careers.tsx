@@ -93,6 +93,13 @@ export default function Careers() {
     }
   ];
 
+  // Client-side form submission handler
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Add form submission logic here
+    console.log('Form submitted');
+  };
+
   return (
     <div className="relative isolate bg-white px-6 py-12 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-5xl text-center">
@@ -111,7 +118,7 @@ export default function Careers() {
       <div className="mx-auto mt-12 grid max-w-7xl grid-cols-1 md:grid-cols-3 gap-8 mb-20">
         {whyJoinCards.map((card, index) => (
           <div 
-            key={index} 
+            key={`why-join-${index}`} 
             className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300"
           >
             <div className="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mx-auto mb-6">
@@ -140,7 +147,7 @@ export default function Careers() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {jobOpenings.map((job, index) => (
             <div 
-              key={index} 
+              key={`job-opening-${index}`} 
               className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300"
             >
               <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -166,7 +173,7 @@ export default function Careers() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Apply to Join Our Team
           </h2>
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label
