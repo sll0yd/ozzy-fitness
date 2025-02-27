@@ -13,6 +13,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
+      <main className="pt-16">
       <Header />
       <PersonalTraining />
       <ScrollingText />
@@ -20,6 +21,7 @@ const Home = () => {
       <FreeTrial />
       <GetInTouch />
       <Footer />
+      </main>
     </div>
   );
 };

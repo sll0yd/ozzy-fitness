@@ -34,12 +34,13 @@ const locations = [
 export default function GymLocations() {
   return (
     <div className="relative isolate bg-white px-6 py-12 sm:py-16 lg:px-8">
-      <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-3xl font-semibold text-red-600 sm:text-4xl">
+      <div className="mx-auto max-w-5xl text-center">
+        <h2 className="text-base font-semibold tracking-wider text-red-600 uppercase">Find Us</h2>
+        <h1 className="mt-2 text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl">
           OUR GYM LOCATIONS
-        </h2>
-        <p className="mt-4 text-xl font-medium text-gray-600 sm:text-2xl">
-          Find a gym near you
+        </h1>
+        <p className="mt-6 text-xl text-gray-500 leading-relaxed">
+          Find an Ozzy Fitness gym near you and start your fitness journey today. Our facilities are strategically located to serve communities across Australia.
         </p>
       </div>
 
@@ -50,14 +51,15 @@ export default function GymLocations() {
             key={index}
             className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden"
           >
-            {/* Gym Photo - Larger */}
-            <div className="relative h-96 w-full"> {/* Adjusted height */}
+            {/* Gym Photo - Responsive height */}
+            <div className="relative w-full pt-[75%] sm:pt-[100%]"> {/* Aspect ratio container */}
               <Image
                 src={location.image}
                 alt={location.name}
-                layout="fill"
-                objectFit="cover"
-                className="w-full h-full"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                style={{ objectFit: "cover" }}
+                priority
               />
             </div>
 
@@ -89,15 +91,16 @@ export default function GymLocations() {
         ))}
       </div>
 
-      {/* Full-Width Club Photo */}
+      {/* Full-Width Club Photo - Responsive */}
       <div className="mx-auto mt-16 max-w-7xl">
-        <div className="relative w-full h-[600px] rounded-lg overflow-hidden">
+        <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden"> {/* 16:9 aspect ratio */}
           <Image
             src={location3}
             alt="Our Club"
-            layout="fill"
-            objectFit="cover"
-            className="w-full h-full"
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
+            priority
           />
         </div>
       </div>

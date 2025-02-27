@@ -8,8 +8,12 @@ const Memberships = () => {
   return (
     <div>
       <Navbar />
+      <main className="pt-16">
+
       <Membership />
       <Footer />
+      </main>
+
     </div>
   );
 };

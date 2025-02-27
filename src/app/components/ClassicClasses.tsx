@@ -17,15 +17,11 @@ const ClassicClasses = () => {
           objectFit="cover" // Cover the container while maintaining aspect ratio
           className="w-full h-full"
         />
-        <div className="absolute inset-0 bg-black/10"></div>
         {/* Text overlay on the image */}
         <div className="absolute bottom-20 right-10 text-white text-right max-w-xs">
           <p className="text-xl md:text-2xl italic">
             « It doesn't get easier. You get stronger with every session. »
           </p>
-        </div>
-        <div className="absolute inset-0 flex items-end justify-center">
-          <div className="w-full h-2/3 bg-gradient-to-t from-black/30 to-transparent"></div>
         </div>
       </div>
 

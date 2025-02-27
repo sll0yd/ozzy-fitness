@@ -20,7 +20,7 @@ const ScrollingText = () => {
           x: ['0%', '-50%'], // Move from current position to left
         }}
         transition={{
-          duration: 20, // Slower animation
+          duration: 30, // Slower animation
           repeat: Infinity, // Loop infinitely
           ease: 'linear', // Smooth linear animation
         }}

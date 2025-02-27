@@ -8,8 +8,6 @@ const PersonalTraining = () => {
 
   return (
     <div className="flex flex-col md:flex-row w-full bg-stone-50 min-h-screen">
-      {" "}
-      {/* Ajout de min-h-screen */}
       <div className="w-full md:w-1/2 p-8 md:p-24 flex flex-col justify-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
           PERSONAL TRAINER
@@ -31,25 +29,19 @@ const PersonalTraining = () => {
         </button>
       </div>
       <div className="w-full md:w-1/2 relative overflow-hidden h-[600px] md:h-auto">
-        {" "}
-        {/* Modification de la hauteur */}
         <Image
           src={trainer}
           alt="Personal Training"
           layout="fill"
           objectFit="cover"
           className="w-full h-full"
-          priority // Ajout de priority pour le chargement prioritaire
+          priority
         />
-        <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute bottom-20 right-10 text-white text-right max-w-xs">
           <p className="text-xl md:text-2xl italic">
             « Success is within reach—and personal training helps you get there
             faster. »
           </p>
-        </div>
-        <div className="absolute inset-0 flex items-end justify-center">
-          <div className="w-full h-2/3 bg-gradient-to-t from-black/30 to-transparent"></div>
         </div>
       </div>
     </div>

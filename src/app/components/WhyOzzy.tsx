@@ -61,107 +61,103 @@ export default function WhyOzzy() {
   ];
 
   return (
-    <div className="relative bg-gray-50 py-16 sm:py-24">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-gray-50 h-full w-full" />
+    <div className="relative isolate bg-white px-6 py-12 sm:py-16 lg:px-8">
+      <div className="mx-auto max-w-5xl text-center">
+        <h2 className="text-base font-semibold tracking-wider text-red-600 uppercase">Your Fitness Journey</h2>
+        <h1 className="mt-2 text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl">
+          WHY CHOOSE OZZY FITNESS
+        </h1>
+        <p className="mt-6 text-xl text-gray-500 leading-relaxed">
+          Ozzy Fitness is dedicated to helping you transform your life through fitness. We provide a comprehensive approach to wellness with flexible membership options, diverse classes, and expert guidance tailored to your individual needs.
+        </p>
+      </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-base font-semibold tracking-wider text-red-600 uppercase">Your Fitness Journey</h2>
-          <h1 className="mt-2 text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl">
-            WHY CHOOSE OZZY FITNESS
-          </h1>
-          <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-            Ozzy Fitness is dedicated to helping you transform your life through fitness. We provide a comprehensive approach to wellness with flexible membership options, diverse classes, and expert guidance tailored to your individual needs.
-          </p>
+      {/* Main Features Grid */}
+      <div className="mx-auto mt-12 max-w-7xl grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-20">
+        {mainFeatures.map((feature, index) => (
+          <div 
+            key={index} 
+            className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
+          >
+            <div className="p-8">
+              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
+                <feature.icon className="h-6 w-6" aria-hidden="true" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-300">
+                {feature.title}
+              </h3>
+              <p className="text-base text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Video or Image Banner */}
+      <div className="mx-auto max-w-7xl relative rounded-2xl overflow-hidden shadow-xl mb-20 aspect-video">
+        <Image 
+          src={members1} // Replace with your uploaded image
+          alt="Ozzy Fitness Training Environment"
+          width={1200}
+          height={600}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Member Testimonials */}
+      <div className="mx-auto max-w-7xl mb-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900">WHAT OUR MEMBERS SAY</h2>
+          <p className="mt-4 text-lg text-gray-600">Real stories from real members who transformed their lives with us</p>
         </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Testimonial 1 */}
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="text-center">
+              <p className="text-gray-600 italic mb-4">"Since joining Ozzy Fitness, I've lost 30kg and gained confidence I never thought possible. The trainers are incredible and the 24/7 access fits perfectly with my busy schedule."</p>
+              <p className="font-semibold text-gray-900">Sarah M.</p>
+              <p className="text-sm text-gray-500">Member for 1.5 years</p>
+            </div>
+          </div>
+          
+          {/* Testimonial 2 */}
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="text-center">
+              <p className="text-gray-600 italic mb-4">"The variety of classes keeps my workouts fresh and exciting. I've met amazing people and the community aspect of Ozzy Fitness has made all the difference in my consistency."</p>
+              <p className="font-semibold text-gray-900">Michael T.</p>
+              <p className="text-sm text-gray-500">Member for 2 years</p>
+            </div>
+          </div>
+          
+          {/* Testimonial 3 */}
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="text-center">
+              <p className="text-gray-600 italic mb-4">"As a busy professional, the 24/7 access is essential. The equipment is top-notch and always well-maintained. The nutrition guidance has completely changed my relationship with food."</p>
+              <p className="font-semibold text-gray-900">James R.</p>
+              <p className="text-sm text-gray-500">Member for 8 months</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        {/* Main Features Grid */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-20">
-          {mainFeatures.map((feature, index) => (
+      {/* Special Offers */}
+      <div className="mx-auto max-w-7xl mb-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900">SPECIAL OFFERS</h2>
+          <p className="mt-4 text-lg text-gray-600">Start your fitness journey today with these exclusive offers</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {promoOffers.map((offer, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className="rounded-xl overflow-hidden shadow-lg group bg-white flex flex-col items-center text-center p-6 h-full"
             >
-              <div className="p-8">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
-                  <feature.icon className="h-6 w-6" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Video or Image Banner */}
-        <div className="relative rounded-2xl overflow-hidden shadow-xl mb-20 aspect-video">
-          <Image 
-            src={members1} // Replace with your uploaded image
-            alt="Ozzy Fitness Training Environment"
-            width={1200}
-            height={600}
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Member Testimonials */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">WHAT OUR MEMBERS SAY</h2>
-            <p className="mt-4 text-lg text-gray-600">Real stories from real members who transformed their lives with us</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <div className="text-center">
-                <p className="text-gray-600 italic mb-4">"Since joining Ozzy Fitness, I've lost 30kg and gained confidence I never thought possible. The trainers are incredible and the 24/7 access fits perfectly with my busy schedule."</p>
-                <p className="font-semibold text-gray-900">Sarah M.</p>
-                <p className="text-sm text-gray-500">Member for 1.5 years</p>
-              </div>
-            </div>
-            
-            {/* Testimonial 2 */}
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <div className="text-center">
-                <p className="text-gray-600 italic mb-4">"The variety of classes keeps my workouts fresh and exciting. I've met amazing people and the community aspect of Ozzy Fitness has made all the difference in my consistency."</p>
-                <p className="font-semibold text-gray-900">Michael T.</p>
-                <p className="text-sm text-gray-500">Member for 2 years</p>
-              </div>
-            </div>
-            
-            {/* Testimonial 3 */}
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <div className="text-center">
-                <p className="text-gray-600 italic mb-4">"As a busy professional, the 24/7 access is essential. The equipment is top-notch and always well-maintained. The nutrition guidance has completely changed my relationship with food."</p>
-                <p className="font-semibold text-gray-900">James R.</p>
-                <p className="text-sm text-gray-500">Member for 8 months</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Special Offers */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">SPECIAL OFFERS</h2>
-            <p className="mt-4 text-lg text-gray-600">Start your fitness journey today with these exclusive offers</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {promoOffers.map((offer, index) => (
-              <div 
-                key={index} 
-                className="rounded-xl overflow-hidden shadow-lg group bg-white flex flex-col items-center text-center p-6"
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{offer.title}</h3>
-                <p className="text-gray-600 mb-6">{offer.description}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{offer.title}</h3>
+              <p className="text-gray-600 mb-6 flex-grow">{offer.description}</p>
+              <div className="mt-auto">
                 <a 
                   href={offer.href}
                   className="inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700 transition-opacity shadow-sm"
@@ -170,31 +166,31 @@ export default function WhyOzzy() {
                   <ArrowRightIcon className="ml-2 -mr-1 h-4 w-4" aria-hidden="true" />
                 </a>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="bg-gradient-to-r from-red-600 to-red-800 rounded-2xl overflow-hidden shadow-xl">
-          <div className="px-6 py-8 sm:px-12 sm:py-12 lg:flex lg:items-center lg:justify-between">
-            <div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                <span className="block">Ready to start your journey?</span>
-                <span className="block text-red-200">Join Ozzy Fitness today.</span>
-              </h2>
-              <p className="mt-4 text-lg leading-6 text-white opacity-90">
-                Sign up now and get access to exclusive member benefits, including our 3-day free trial.
-              </p>
             </div>
-            <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-              <div className="inline-flex rounded-md shadow">
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-red-600 bg-white hover:bg-red-50 transition-colors"
-                >
-                  GET STARTED
-                </a>
-              </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Call to Action */}
+      <div className="mx-auto max-w-7xl bg-gradient-to-r from-red-600 to-red-800 rounded-2xl overflow-hidden shadow-xl">
+        <div className="px-6 py-8 sm:px-12 sm:py-12 lg:flex lg:items-center lg:justify-between">
+          <div>
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              <span className="block">Ready to start your journey?</span>
+              <span className="block text-red-200">Join Ozzy Fitness today.</span>
+            </h2>
+            <p className="mt-4 text-lg leading-6 text-white opacity-90">
+              Sign up now and get access to exclusive member benefits, including our 3-day free trial.
+            </p>
+          </div>
+          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div className="inline-flex rounded-md shadow">
+              <a
+                href="/memberships"
+                className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-red-600 bg-white hover:bg-red-50 transition-colors"
+              >
+                GET STARTED
+              </a>
             </div>
           </div>
         </div>
