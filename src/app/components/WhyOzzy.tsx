@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import DOMPurify from 'dompurify';
 import members1 from "../../assets/members1.png";
 import {
   ArrowRightIcon,
@@ -12,57 +11,37 @@ import {
   ScaleIcon,
 } from "@heroicons/react/24/outline";
 
-// Utility function for sanitizing text
-function sanitizeText(text: string): string {
-  return DOMPurify.sanitize(text, {
-    ALLOWED_TAGS: [],  // Strip all HTML tags
-    ALLOWED_ATTR: []   // Strip all HTML attributes
-  });
-}
-
 export default function WhyOzzy() {
   // Main features section
   const mainFeatures = [
     {
-      title: sanitizeText("24/7 ACCESS"),
-      description: sanitizeText(
-        "Our facilities are always open, allowing you to train whenever fits your schedule. Early bird or night owl, we're here for you around the clock."
-      ),
+      title: "24/7 ACCESS",
+      description: "Our facilities are always open, allowing you to train whenever fits your schedule. Early bird or night owl, we're here for you around the clock.",
       icon: ClockIcon,
     },
     {
-      title: sanitizeText("VARIETY OF CLASSES"),
-      description: sanitizeText(
-        "From high-intensity interval training to mind-body wellness sessions, our diverse class schedule ensures there's something for everyone, regardless of your fitness level or preference."
-      ),
+      title: "VARIETY OF CLASSES",
+      description: "From high-intensity interval training to mind-body wellness sessions, our diverse class schedule ensures there's something for everyone, regardless of your fitness level or preference.",
       icon: UserGroupIcon,
     },
     {
-      title: sanitizeText("EXPERT TRAINERS"),
-      description: sanitizeText(
-        "Our certified personal trainers are passionate about helping you reach your goals. With personalized guidance and motivation, you'll never feel lost on your fitness journey."
-      ),
+      title: "EXPERT TRAINERS",
+      description: "Our certified personal trainers are passionate about helping you reach your goals. With personalized guidance and motivation, you'll never feel lost on your fitness journey.",
       icon: AcademicCapIcon,
     },
     {
-      title: sanitizeText("STATE-OF-THE-ART EQUIPMENT"),
-      description: sanitizeText(
-        "Train with the latest fitness technology and equipment designed to maximize your workout efficiency and results, all maintained to the highest standards."
-      ),
+      title: "STATE-OF-THE-ART EQUIPMENT",
+      description: "Train with the latest fitness technology and equipment designed to maximize your workout efficiency and results, all maintained to the highest standards.",
       icon: SparklesIcon,
     },
     {
-      title: sanitizeText("SUPPORTIVE COMMUNITY"),
-      description: sanitizeText(
-        "Join a welcoming community of like-minded individuals who will encourage and inspire you to push beyond your limits and celebrate your achievements."
-      ),
+      title: "SUPPORTIVE COMMUNITY",
+      description: "Join a welcoming community of like-minded individuals who will encourage and inspire you to push beyond your limits and celebrate your achievements.",
       icon: HeartIcon,
     },
     {
-      title: sanitizeText("NUTRITION GUIDANCE"),
-      description: sanitizeText(
-        "Access expert nutrition advice to complement your training regimen. Because we know that great results come from both exercise and proper nutrition."
-      ),
+      title: "NUTRITION GUIDANCE",
+      description: "Access expert nutrition advice to complement your training regimen. Because we know that great results come from both exercise and proper nutrition.",
       icon: ScaleIcon,
     },
   ];
@@ -70,53 +49,41 @@ export default function WhyOzzy() {
   // Promotional offers
   const promoOffers = [
     {
-      title: sanitizeText("3 DAY FREE TRIAL"),
-      description: sanitizeText(
-        "Experience everything Ozzy Fitness has to offer with no commitment. Available with all memberships."
-      ),
-      buttonText: sanitizeText("CLAIM NOW"),
+      title: "3 DAY FREE TRIAL",
+      description: "Experience everything Ozzy Fitness has to offer with no commitment. Available with all memberships.",
+      buttonText: "CLAIM NOW",
       href: "#",
     },
     {
-      title: sanitizeText("FREE PERSONAL TRAINING SESSION"),
-      description: sanitizeText(
-        "Get a complimentary 1-hour session with one of our expert trainers to kickstart your journey."
-      ),
-      buttonText: sanitizeText("BOOK SESSION"),
+      title: "FREE PERSONAL TRAINING SESSION",
+      description: "Get a complimentary 1-hour session with one of our expert trainers to kickstart your journey.",
+      buttonText: "BOOK SESSION",
       href: "#",
     },
     {
-      title: sanitizeText("NO LOCK-IN CONTRACTS"),
-      description: sanitizeText(
-        "Flexible membership options that adapt to your lifestyle, with no long-term commitments required."
-      ),
-      buttonText: sanitizeText("VIEW PLANS"),
+      title: "NO LOCK-IN CONTRACTS",
+      description: "Flexible membership options that adapt to your lifestyle, with no long-term commitments required.",
+      buttonText: "VIEW PLANS",
       href: "#",
     },
   ];
 
-  // Testimonials with sanitization
+  // Testimonials
   const testimonials = [
     {
-      quote: sanitizeText(
-        "Since joining Ozzy Fitness, I've lost 30kg and gained confidence I never thought possible. The trainers are incredible and the 24/7 access fits perfectly with my busy schedule."
-      ),
-      name: sanitizeText("Sarah M."),
-      duration: sanitizeText("Member for 1.5 years"),
+      quote: "Since joining Ozzy Fitness, I've lost 30kg and gained confidence I never thought possible. The trainers are incredible and the 24/7 access fits perfectly with my busy schedule.",
+      name: "Sarah M.",
+      duration: "Member for 1.5 years",
     },
     {
-      quote: sanitizeText(
-        "The variety of classes keeps my workouts fresh and exciting. I've met amazing people and the community aspect of Ozzy Fitness has made all the difference in my consistency."
-      ),
-      name: sanitizeText("Michael T."),
-      duration: sanitizeText("Member for 2 years"),
+      quote: "The variety of classes keeps my workouts fresh and exciting. I've met amazing people and the community aspect of Ozzy Fitness has made all the difference in my consistency.",
+      name: "Michael T.",
+      duration: "Member for 2 years",
     },
     {
-      quote: sanitizeText(
-        "As a busy professional, the 24/7 access is essential. The equipment is top-notch and always well-maintained. The nutrition guidance has completely changed my relationship with food."
-      ),
-      name: sanitizeText("James R."),
-      duration: sanitizeText("Member for 8 months"),
+      quote: "As a busy professional, the 24/7 access is essential. The equipment is top-notch and always well-maintained. The nutrition guidance has completely changed my relationship with food.",
+      name: "James R.",
+      duration: "Member for 8 months",
     },
   ];
 

@@ -2,29 +2,18 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import DOMPurify from 'dompurify';
-
-// Utility function for sanitizing text
-function sanitizeText(text: string): string {
-  return DOMPurify.sanitize(text, {
-    ALLOWED_TAGS: [],  // Strip all HTML tags
-    ALLOWED_ATTR: []   // Strip all attributes
-  });
-}
 
 const FreeTrial: React.FC = () => {
-  // Centralized content with sanitization
+  // Centralized content without sanitization
   const content = {
-    preHeading: sanitizeText("TRANSFORM YOUR JOURNEY"),
+    preHeading: "TRANSFORM YOUR JOURNEY",
     mainHeading: {
-      primary: sanitizeText("Unleash Your Potential"),
-      highlight: sanitizeText("3 DAYS FREE ACCESS")
+      primary: "Unleash Your Potential",
+      highlight: "3 DAYS FREE ACCESS"
     },
-    description: sanitizeText(
-      "Take the first step toward a stronger, better you. We're removing all barriers – experience our premium training platform with no commitment required."
-    ),
-    ctaButton: sanitizeText("Start Your Free Trial"),
-    trustIndicator: sanitizeText("No credit card required • Cancel anytime")
+    description: "Take the first step toward a stronger, better you. We're removing all barriers – experience our premium training platform with no commitment required.",
+    ctaButton: "Start Your Free Trial",
+    trustIndicator: "No credit card required • Cancel anytime"
   };
 
   return (

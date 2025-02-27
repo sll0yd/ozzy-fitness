@@ -1,28 +1,17 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import DOMPurify from 'dompurify';
 import classes from "../../assets/classes.jpg";
-
-// Utility function for sanitizing text
-function sanitizeText(text: string): string {
-  return DOMPurify.sanitize(text, {
-    ALLOWED_TAGS: [],  // Strip all HTML tags
-    ALLOWED_ATTR: []   // Strip all attributes
-  });
-}
 
 // Classic Courses Section Component
 const ClassicClasses: React.FC = () => {
   const [hovered, setHovered] = useState<boolean>(false);
 
-  // Sanitized content
+  // Content without sanitization
   const content = {
-    quote: sanitizeText("« It doesn't get easier. You get stronger with every session. »"),
-    title: sanitizeText("GROUP CLASSES"),
-    description: sanitizeText(
-      "Experience the energy of training together! Designed to enhance your fitness journey, our group classes create a powerful synergy between energy expenditure, active recovery, and improved mobility—all within a motivating and supportive community."
-    ),
-    buttonText: sanitizeText("SEE MORE")
+    quote: "« It doesn't get easier. You get stronger with every session. »",
+    title: "GROUP CLASSES",
+    description: "Experience the energy of training together! Designed to enhance your fitness journey, our group classes create a powerful synergy between energy expenditure, active recovery, and improved mobility—all within a motivating and supportive community.",
+    buttonText: "SEE MORE"
   };
 
   return (
