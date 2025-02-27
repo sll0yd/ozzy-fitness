@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ozzyLogo from "../../assets/OZFITWHITE.png";
@@ -25,7 +25,7 @@ const Navbar = () => {
     updateActiveLink();
     window.addEventListener("hashchange", updateActiveLink);
     return () => window.removeEventListener("hashchange", updateActiveLink);
-  }, []);
+  }, []); 
 
   // Check if we're on the get-in-touch section when the component mounts
   useEffect(() => {
@@ -50,10 +50,16 @@ const Navbar = () => {
 
   // Force background to persist when hash changes to #get-in-touch
   useEffect(() => {
-    if (window.location.hash === "#get-in-touch") {
-      setScrolled(true); // Force background to stay visible
-    }
-  }, [window.location.hash]);
+    const checkHash = () => {
+      if (window.location.hash === "#get-in-touch") {
+        setScrolled(true); // Force background to stay visible
+      }
+    };
+
+    checkHash();
+    window.addEventListener("hashchange", checkHash);
+    return () => window.removeEventListener("hashchange", checkHash);
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -78,8 +84,11 @@ const Navbar = () => {
     }
   }, []);
 
-  // Modified scrollToSection with background fix
-  const scrollToSection = (e, sectionId) => {
+  // Type-safe scrollToSection
+  const scrollToSection = (
+    e: MouseEvent<HTMLAnchorElement>, 
+    sectionId: string
+  ) => {
     e.preventDefault();
 
     // Special handling for get-in-touch
@@ -111,7 +120,15 @@ const Navbar = () => {
     }
   };
 
-  const navLinks = [
+  // Define type for nav links
+  interface NavLink {
+    name: string;
+    path: string;
+    isScroll?: boolean;
+    sectionId?: string;
+  }
+
+  const navLinks: NavLink[] = [
     { name: "Locations", path: "/locations" },
     { name: "Memberships", path: "/memberships" },
     { name: "Why Ozzy", path: "/whyozzy" },
@@ -156,7 +173,7 @@ const Navbar = () => {
                     href={link.path}
                     onClick={
                       link.isScroll
-                        ? (e) => scrollToSection(e, link.sectionId)
+                        ? (e) => scrollToSection(e, link.sectionId || "")
                         : undefined
                     }
                     className={`text-white relative inline-block group font-roboto text-sm lg:text-base uppercase tracking-wide transition-colors duration-300 hover:text-red-200 ${
@@ -267,7 +284,7 @@ const Navbar = () => {
                     {link.isScroll ? (
                       <Link
                         href={link.path}
-                        onClick={(e) => scrollToSection(e, link.sectionId)}
+                        onClick={(e) => scrollToSection(e, link.sectionId || "")}
                         className="block w-full px-3 py-2 rounded-md font-roboto text-base uppercase tracking-wide transition-colors duration-200 cursor-pointer text-white hover:text-red-400"
                       >
                         {link.name}
